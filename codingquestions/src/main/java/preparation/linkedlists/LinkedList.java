@@ -1,20 +1,12 @@
 package preparation.linkedlists;
 
 public class LinkedList {
-    class Node {
-        int val;
-        Node next;
-
-        public Node(int val) {
-            this.val = val;
-            this.next = null;
-        }
-    };
-
     Node head = null;
     public LinkedList() {
     }
-
+    public Node getHead() {
+        return head;
+    }
     public void add(int val) {
         Node n = new Node(val);
         if(head == null) {
@@ -87,7 +79,7 @@ public class LinkedList {
             fast = fast.next.next;
             slow = slow.next;
         }
-
+        Node middle = slow;
         return true;
     }
 }
