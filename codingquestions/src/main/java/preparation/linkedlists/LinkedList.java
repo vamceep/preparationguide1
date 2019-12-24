@@ -4,6 +4,9 @@ public class LinkedList {
     Node head = null;
     public LinkedList() {
     }
+    public LinkedList(Node node) {
+        this.head = node;
+    }
     public Node getHead() {
         return head;
     }
@@ -81,5 +84,66 @@ public class LinkedList {
         }
         Node middle = slow;
         return true;
+    }
+
+    public boolean detectLoop() {
+        Node slow = head;
+        Node fast = head;
+        while(slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeLoop(Node head, Node loopNode) {
+        Node ptr1 = loopNode;
+        Node ptr2 = loopNode;
+        int k = 0;
+        // find number of nodes in the loop.
+        while(ptr1.next != ptr2) {
+            ptr1 = ptr1.next;
+            k++;
+        }
+        // now move a pointer to k nodes away from head
+        ptr2 = head;
+        while(k>0) {
+            ptr2 = ptr2.next;
+            k--;
+        }
+        ptr1 = head;
+        // move both pointers at same pace so that they meet
+        while(ptr2 != ptr1) {
+            ptr1 = ptr1.next;
+            ptr2 = ptr2.next;
+        }
+        // traverse and get the last node
+        // if ptr2.next = ptr1 i.e. the place loop to break
+        while(ptr2.next != ptr1) {
+            ptr2 = ptr2.next;
+        }
+        ptr2.next = null;
+    }
+    public void detectAndRemoveLoop() {
+        Node slow = head;
+        Node fast = head;
+        while(slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) {
+                break;
+            }
+        }
+        if(slow == fast) {
+            slow = head;
+            while (slow.next != fast.next) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            fast.next = null;
+        }
     }
 }
