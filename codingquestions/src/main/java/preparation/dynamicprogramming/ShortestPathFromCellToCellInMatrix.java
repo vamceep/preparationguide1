@@ -12,7 +12,7 @@ public class ShortestPathFromCellToCellInMatrix {
     }
     /*
     https://medium.com/@tiagot/dynamic-programming-an-induction-approach-b5c5e73c4a19
-    Give an n*m matrix where each cell carries weight (+ or - ve values), find the
+    Give an n*m preparation.matrix where each cell carries weight (+ or - ve values), find the
     shortest path from [i][j] to [k][l] with minimum cost.
      */
     public static int findShortestPath(int[][] matrix, Cell left, Cell right) {
