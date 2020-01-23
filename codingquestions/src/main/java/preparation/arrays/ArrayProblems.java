@@ -64,7 +64,7 @@ public class ArrayProblems {
         if(arr[mid] == val) {
             return mid;
         }
-        /* if arr[low ... high] sorted */
+        /* if arr[low ... mid] sorted */
         if(arr[low] <= arr[mid]) {
             if (val >= arr[low] && val <= arr[mid]) {
                 return search(arr, low, mid-1, val);
