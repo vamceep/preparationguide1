@@ -1,7 +1,7 @@
 package preparation.dynamicprogramming;
 
 public class ShortestPathFromCellToCellInMatrix {
-
+    static int[][] shortestPath;
     static class Cell {
         int row;
         int col;
@@ -16,7 +16,7 @@ public class ShortestPathFromCellToCellInMatrix {
     shortest path from [i][j] to [k][l] with minimum cost.
      */
     public static int findShortestPath(int[][] matrix, Cell left, Cell right) {
-        int[][] shortestPath = new int[matrix.length][matrix[0].length];
+        shortestPath = new int[matrix.length][matrix[0].length];
         shortestPath[0][0] = matrix[0][0];
         int m = matrix.length;
         int n = matrix[0].length;
@@ -55,6 +55,11 @@ public class ShortestPathFromCellToCellInMatrix {
                 {-5, 3, -2, 6, 9, 2}
         };
         printMatrix(matrix);
-        findShortestPath(matrix, new Cell(0,0), new Cell(3,3));
+        int i1 = 0;
+        int j1 = 0;
+        int i2 = 3;
+        int j2 = 3;
+        findShortestPath(matrix, new Cell(i1,j1), new Cell(i2,j2));
+        System.out.println("Shortest path: " + shortestPath[i2][j2]);
     }
 }
