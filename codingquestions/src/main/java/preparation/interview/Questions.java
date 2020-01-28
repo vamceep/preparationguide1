@@ -4,6 +4,7 @@ public class Questions {
 
 
     public static void printBits(int[] arr, int s, int e) {
+
         if(s==e) {
             for(int i=0;i<e;i++) {
                 System.out.print(arr[i]+ " ");
@@ -72,7 +73,7 @@ public class Questions {
         reverseSentace("the quick fox jumped on to a black box");
     }
     public static void main(String[] args) {
-        //checkPrintBits();
-        checkReverseSentance();
+        checkPrintBits();
+        //checkReverseSentance();
     }
 }
