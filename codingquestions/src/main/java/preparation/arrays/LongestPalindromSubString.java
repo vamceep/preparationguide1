@@ -7,9 +7,10 @@ public class LongestPalindromSubString {
      *
      * idea: send and index and check how much it would expand left and right
      * with palindrom constraint
-     * send index +1 and check the same
-     * check max and update start and end.
-     * Repeast till length of the string.
+     * find palindrom with even length = len1
+     * find palindrom with odd length = len2
+     * get max of len1 and len2 = len.
+     * Repeat till length of the string.
      */
 
     public static String longestPalindrom(String s) {
