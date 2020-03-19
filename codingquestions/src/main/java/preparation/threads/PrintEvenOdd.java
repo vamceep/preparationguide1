@@ -1,6 +1,12 @@
 package preparation.threads;
 
 public class PrintEvenOdd {
+    /**
+     * Print even and odd numbers using two threads with prinve static Object lock
+     * using synchronize on (object / lock)
+     * then call lock.wait() to get the state and
+     * lock.notify() or lock.notifyAll()
+     */
     public static int NUMBERS_UPTO = 10;
 
     static public class OddEvenNumberPrint implements Runnable {
