@@ -4,6 +4,11 @@ public class BinaryTreeIsSubTree {
     /**
      * Given two binary trees t1 and t2 , check if t2 is sub tree of t1
      * complexity is O(mn)
+     *
+     * O(n) solution is
+     * for both binary trees, get inorder and pre (or post) order list as array
+     * compare in[t1] with in[t2] and pre[t1] and pre[t2] // as sub list
+     *
      */
     private static class Node {
         int val;
