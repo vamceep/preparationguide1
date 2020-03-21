@@ -26,13 +26,25 @@ public class FindIsLands {
         int[] rowIndex  = {-1,-1,-1,0,0,1,1,1};
         int[] colIndex = {-1,0, 1,-1,1,-1,0,1};
         visited[row][col] = true;
+        // spread as much as possible till all nodes are visited already and now 1's found.
         for(int k = 0; k < 8;k++) {
+            // if the row and colum cell is in the range, not visited, and have 1 in it,
+            // do it for adjacent cells.
+            // once all adjacents are completed, do it for remaining cells of 8
+            //
             if(isSafe(M, row + rowIndex[k], col+colIndex[k], visited)) {
                 dfs(M,row + rowIndex[k], col+colIndex[k], visited);
             }
         }
     }
 
+    /**
+     * for all elements of matrix m*n, if current cell has 1,
+     * do dfs till all cells are visited and all adjacent cells are 1
+     * combine all of them as one unit. count is increase for such unit.
+     * @param M
+     * @return
+     */
     public static int countIslands(int[][] M) {
         boolean[][] visited = new boolean[R][C];
         int count = 0;
