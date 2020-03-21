@@ -3,12 +3,12 @@ package preparation.tries;
 import java.util.HashMap;
 
 public class Trie {
-    Character c;
+    String prefix;
     HashMap<Character, Trie> children;
     boolean isWord;
 
-    public Trie(Character c) {
-        this.c = c;
+    public Trie(String prefix) {
+        this.prefix = prefix;
         children = new HashMap<>();
         isWord = false;
     }

@@ -21,7 +21,7 @@ public class MedianOfSortedArrays {
             return m1;
         }else if(m1 > m2) {
             // median will be in first half of first array and second half of second array
-            // a[... m2] and b[m2...]
+            // a[... m1] and b[m2...]
             return medianOfSorted(a, b, starta,(endb + startb +1 )/2,
                     (enda + starta + 1) /2, endb);
         }else {
