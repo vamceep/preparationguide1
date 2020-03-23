@@ -4,7 +4,7 @@ package preparation.binarytrees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree {
+public class LCAOfBinaryTreeAllWays {
     public static class Node {
 
         int val;
