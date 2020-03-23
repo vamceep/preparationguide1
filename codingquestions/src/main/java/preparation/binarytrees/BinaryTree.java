@@ -5,16 +5,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryTree {
-    private static BinaryTreeNode root = null;
+    public static class Node {
+
+        int val;
+        Node left;
+        Node right;
+
+        public Node(int val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
+    }
+    static Node root = null;
     private static boolean v1_exists = false;
     private static boolean v2_exists = false;
 
-    public BinaryTreeNode getNode(int val) {
-        return new BinaryTreeNode(val);
+    public Node getNode(int val) {
+        return new Node(val);
     }
 
     public static int lca(int n1, int n2) {
-        BinaryTreeNode lca = lcaInternal(root, n1, n2);
+        Node lca = lcaInternal(root, n1, n2);
         if (lca != null) {
             return lca.val;
         } else {
@@ -22,7 +34,7 @@ public class BinaryTree {
         }
     }
 
-    private static BinaryTreeNode lcaInternal(BinaryTreeNode root, int n1, int n2) {
+    private static Node lcaInternal(Node root, int n1, int n2) {
         if (root == null) {
             return root;
         }
@@ -31,8 +43,8 @@ public class BinaryTree {
             return root;
         }
 
-        BinaryTreeNode left = lcaInternal(root.left, n1, n2);
-        BinaryTreeNode right = lcaInternal(root.right, n1, n2);
+        Node left = lcaInternal(root.left, n1, n2);
+        Node right = lcaInternal(root.right, n1, n2);
         if (left != null && right != null) {
             return root;
         } else {
@@ -40,11 +52,11 @@ public class BinaryTree {
         }
     }
 
-    public BinaryTreeNode getRoot() {
+    public Node getRoot() {
         return root;
     }
 
-    public void printInorder(BinaryTreeNode root) {
+    public static void printInorder(Node root) {
         if (root == null) {
             return;
         }
@@ -54,28 +66,28 @@ public class BinaryTree {
     }
 
     public static void createSampleTree() {
-        root = new BinaryTreeNode(5);
-        root.left = new BinaryTreeNode(8);
-        root.right = new BinaryTreeNode(2);
-        root.left.left = new BinaryTreeNode(15);
-        root.left.right = new BinaryTreeNode(30);
-        root.left.left.left = new BinaryTreeNode(1);
-        root.left.left.right = new BinaryTreeNode(10);
+        root = new Node(5);
+        root.left = new Node(8);
+        root.right = new Node(2);
+        root.left.left = new Node(15);
+        root.left.right = new Node(30);
+        root.left.left.left = new Node(1);
+        root.left.left.right = new Node(10);
 
-        root.left.right.left = new BinaryTreeNode(3);
-        root.left.right.right = new BinaryTreeNode(50);
+        root.left.right.left = new Node(3);
+        root.left.right.right = new Node(50);
 
-        root.left.right.left.left = new BinaryTreeNode(60);
-        root.left.right.left.right = new BinaryTreeNode(20);
+        root.left.right.left.left = new Node(60);
+        root.left.right.left.right = new Node(20);
 
-        root.right.left = new BinaryTreeNode(22);
-        root.right.right = new BinaryTreeNode(25);
+        root.right.left = new Node(22);
+        root.right.right = new Node(25);
 
 
-        root.right.left.left = new BinaryTreeNode(33);
+        root.right.left.left = new Node(33);
     }
 
-    public static boolean findPath(BinaryTreeNode root, int val, List<BinaryTreeNode> path) {
+    public static boolean findPath(Node root, int val, List<Node> path) {
         if (root == null) {
             return false;
         }
@@ -92,9 +104,9 @@ public class BinaryTree {
         return false;
     }
 
-    public static BinaryTreeNode findLCA_method1_TwoLists_On(BinaryTreeNode root, int v1, int v2) {
-        List<BinaryTreeNode> path1 = new ArrayList<>();
-        List<BinaryTreeNode> path2 = new ArrayList<>();
+    public static Node findLCA_method1_TwoLists_On(Node root, int v1, int v2) {
+        List<Node> path1 = new ArrayList<>();
+        List<Node> path2 = new ArrayList<>();
         if (!findPath(root, v1, path1) || !findPath(root, v2, path2)) {
             return null;
         }
@@ -108,7 +120,7 @@ public class BinaryTree {
     }
 
 
-    public static BinaryTreeNode findLCA_method2_SingleTraversal(BinaryTreeNode root, int v1, int v2) {
+    public static Node findLCA_method2_SingleTraversal(Node root, int v1, int v2) {
         if (root == null) {
             return null;
         }
@@ -116,8 +128,8 @@ public class BinaryTree {
         if (root.val == v1 || root.val == v2) {
             return root;
         }
-        BinaryTreeNode left = findLCA_method2_SingleTraversal(root.left, v1, v2);
-        BinaryTreeNode right = findLCA_method2_SingleTraversal(root.right, v1, v2);
+        Node left = findLCA_method2_SingleTraversal(root.left, v1, v2);
+        Node right = findLCA_method2_SingleTraversal(root.right, v1, v2);
         if (left != null && right != null) {
             return root;
         }
@@ -126,11 +138,11 @@ public class BinaryTree {
     }
 
 
-    private static BinaryTreeNode findLCAUtil_method3(BinaryTreeNode root, int v1, int v2) {
+    private static Node findLCAUtil_method3(Node root, int v1, int v2) {
         if(root == null) {
             return null;
         }
-        BinaryTreeNode temp = null;
+        Node temp = null;
         if(root.val == v1) {
             v1_exists = true;
             temp = root;
@@ -139,8 +151,8 @@ public class BinaryTree {
             v2_exists = true;
             temp = root;
         }
-        BinaryTreeNode left = findLCAUtil_method3(root.left, v1, v2);
-        BinaryTreeNode right = findLCAUtil_method3(root.right, v1, v2);
+        Node left = findLCAUtil_method3(root.left, v1, v2);
+        Node right = findLCAUtil_method3(root.right, v1, v2);
         if(temp != null) {
             return temp;
         }
@@ -149,10 +161,10 @@ public class BinaryTree {
         }
         return (left != null ? left : right);
     }
-    private static BinaryTreeNode findLCA_method3_HandleNodesNotAvailable(BinaryTreeNode root, int v1, int v2) {
+    private static Node findLCA_method3_HandleNodesNotAvailable(Node root, int v1, int v2) {
         v1_exists = false;
         v2_exists = false;
-        BinaryTreeNode lca = findLCAUtil_method3(root, v1, v2);
+        Node lca = findLCAUtil_method3(root, v1, v2);
         if(v1_exists && v2_exists){
             return lca;
         }
@@ -161,10 +173,10 @@ public class BinaryTree {
 
     public static void main(String[] args) {
         createSampleTree();
-        BinarySearchTree.printInorder(root);
+        printInorder(root);
         int v1 = 33;
         int v2 = 25;
-        BinaryTreeNode result = findLCA_method1_TwoLists_On(root, v1, v2);
+        Node result = findLCA_method1_TwoLists_On(root, v1, v2);
         if (result != null) {
             System.out.println("\n LCA of " + v1 + " " + v2 + " is : " + result.val);
         } else {
