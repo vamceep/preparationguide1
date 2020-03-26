@@ -49,15 +49,40 @@ public class SortToSquareOfArray {
         }
         return t;
     }
+
+    public static int[] sortSquaresMethod2(int[] a) {
+        int[] t = new int[a.length];
+        int i = 0;
+        int j = a.length -1;
+        int ind = a.length -1;
+        while(i < j) {
+            int isqr = a[i] * a[i];
+            int jsqr = a[j] * a[j];
+            if(isqr < jsqr) {
+                t[ind--] = jsqr;
+                j--;
+            }else if(isqr > jsqr) {
+                t[ind--] = isqr;
+                i++;
+            }else {
+                t[ind--] = jsqr;
+                t[ind--] = isqr;
+                j--;
+                i++;
+            }
+        }
+
+        return t;
+    }
     public static void main(String[] args) {
-        int arr[] = { -6 , -3 , -1 , 2 , 4 , 5 };
+        int arr[] = { -6 , -3 , -1 ,0,0, 2 , 4 , 5 };
         int n = arr.length;
 
         System.out.println("Before sort ");
         for (int i = 0; i < n; i++)
             System.out.print(arr[i] + " ");
 
-        int[] result = sortSquares(arr);
+        int[] result = sortSquaresMethod2(arr);
         System.out.println("");
         System.out.println("After Sort ");
         for (int i = 0 ; i < n ; i++)
