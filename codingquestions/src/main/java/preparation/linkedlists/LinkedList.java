@@ -146,4 +146,17 @@ public class LinkedList {
             fast.next = null;
         }
     }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.add(1);
+        ll.add(2);
+        ll.add(3);
+        System.out.println("list:");
+        ll.print();
+        System.out.println("After reverse");
+        //ll.reverse();
+        ll.reverseItr();
+        ll.print();
+    }
 }
