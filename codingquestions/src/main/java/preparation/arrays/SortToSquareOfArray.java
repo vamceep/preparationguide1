@@ -75,7 +75,8 @@ public class SortToSquareOfArray {
         return t;
     }
     public static void main(String[] args) {
-        int arr[] = { -6 , -3 , -1 ,0,0, 2 , 4 , 5 };
+//        int arr[] = { -6 , -3 , -1 ,0,0, 2 , 4 , 5 };
+        int arr[] = {-20, -15, -10, -2, 1, 2, 40};
         int n = arr.length;
 
         System.out.println("Before sort ");
