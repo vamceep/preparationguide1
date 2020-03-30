@@ -12,3 +12,5 @@ Spin lock:
     Is combination of spin lock and normal locks.
     Before java 8, if flags are enabled, initially a spin lock waits for 12 times then it will go for sleep
     Later this is removed.
+Links: 
+    https://www.youtube.com/watch?v=cEcNLfXEaZs
