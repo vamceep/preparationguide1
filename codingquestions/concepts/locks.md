@@ -14,3 +14,5 @@ Spin lock:
     Later this is removed.
 Links: 
     https://www.youtube.com/watch?v=cEcNLfXEaZs
+    
+Test and Set, xchange: https://www.youtube.com/watch?v=yB8sm-pwvZo
