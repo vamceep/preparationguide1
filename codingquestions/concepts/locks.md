@@ -1,8 +1,10 @@
 Spin lock:
 
     Spin locks can be used if amount of wait time is very less.
-    If a thread is doing I/O in the synchronized section, other threads will have to wait for more time. Spin locks are not good here.
-    But if a thread is taking minimal amount of time (say reading from cache in 1ms) and done with the work, other threads can do busy wait
+    If a thread is doing I/O in the synchronized section, other threads will have to wait for more time.
+    Spin locks are not good here.
+    But if a thread is taking minimal amount of time (say reading from cache in 1ms) and done with the work, 
+    other threads can do busy wait
     spin locks.
   
  Adaptive lock:
