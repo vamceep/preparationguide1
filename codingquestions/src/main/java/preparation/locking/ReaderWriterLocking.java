@@ -4,6 +4,8 @@ public class ReaderWriterLocking {
     /**
      * details to capture reader writer locks details
      * https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-7%3A-The-Reader-Writer-Problem
+     *
+     * https://stackoverflow.com/questions/19172541/procs-fork-and-mutexes
      */
     /*
     int writers ; // writers count
