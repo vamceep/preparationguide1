@@ -48,5 +48,6 @@ Linux Boot process( fedora):
     -- 5 X11
     -- 6 reboot
     
-
-    
+Notes:
+** PID of scheduler is 0
+00 PID of init is 0
