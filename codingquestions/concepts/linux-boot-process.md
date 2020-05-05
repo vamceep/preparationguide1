@@ -52,4 +52,6 @@ Notes:
 ** PID of scheduler is 0
 00 PID of init is 0
 
+Useful images:
+<img src="https://static.thegeekstuff.com/wp-content/uploads/2011/02/linux-boot-process.png" width="300">
 <img src="https://opensource.com/sites/default/files/u128651/linuxboot_3.png">
