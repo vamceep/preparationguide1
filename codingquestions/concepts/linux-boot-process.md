@@ -1,7 +1,9 @@
 Resources:
 
 https://www.youtube.com/watch?v=ZtVpz5VWjAs
+
 https://www.thegeekstuff.com/2011/02/linux-boot-process/
+
 https://www.tecmint.com/linux-boot-process/
 
 
