@@ -49,8 +49,6 @@ public class Find2NodesAreCousinsInBinaryTree {
         }
         Queue<QNode> qNodes = new LinkedList<>();
         int level = 0;
-        boolean found1 = false;
-        boolean found2 = false;
         QNode qn1 = null;
         QNode qn2 = null;
         qNodes.add(new QNode(root, root, level));
@@ -62,24 +60,18 @@ public class Find2NodesAreCousinsInBinaryTree {
             if(qNode.node.right != null) {
                 qNodes.add(new QNode(qNode.node.right, qNode.node, qNode.level+1));
             }
-            if(!found1) {
-                if(qNode.node == n1) {
-                    found1 = true;
-                    qn1 = qNode;
-                }
+            if(qn1 == null && qNode.node == n1) {
+                qn1 = qNode;
             }
 
-            if(!found2) {
-                if(qNode.node == n2) {
-                    found2 = true;
-                    qn2 = qNode;
-                }
+            if(qn2 == null && qNode.node == n2) {
+                qn2 = qNode;
             }
-            if(found1 && found2) {
+            if(qn1 != null && qn2 != null) {
                 break;
             }
         }
-        if(found1 && found2) {
+        if(qn1 != null && qn2 != null) {
             if(qn1.level == qn2.level  && qn1.parent != qn2.parent) {
                 return true;
             }
@@ -127,10 +119,10 @@ public class Find2NodesAreCousinsInBinaryTree {
         tree.root.right.left.right = new Node(8);
 
         Node n1, n2;
-//        n1 = tree.root.left.right.right;
-//        n2 = tree.root.right.left.right;
-        n1 = tree.root.left.left;
-        n2 = tree.root.left.right;
+        n1 = tree.root.left.right.right;
+        n2 = tree.root.right.left.right;
+//        n1 = tree.root.left.left;
+//        n2 = tree.root.left.right;
         if (tree.isCousin(tree.root, n1, n2))
             System.out.println("Yes");
         else
