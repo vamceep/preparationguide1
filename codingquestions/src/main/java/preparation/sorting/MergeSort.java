@@ -1,8 +1,8 @@
 package preparation.sorting;
 
-public class HeapSort {
+public class MergeSort {
 
-    public HeapSort() {
+    public MergeSort() {
 
     }
 
