@@ -18,7 +18,7 @@ public class PrintAllPathsFromRootAndPalindromPaths {
         }
     }
     public static Node root;
-
+    public static int probPalPaths = 0;
     public static boolean canBePalindrom(int[] arr, int len) {
         HashSet<Integer> set = new HashSet<>();
         for(int i=0; i< len;i++) {
@@ -54,6 +54,7 @@ public class PrintAllPathsFromRootAndPalindromPaths {
                 System.out.println(" : a palindrom");
             }else if(canBePalindrom(list, length) ) {
                 System.out.println(" : can be palindrom");
+                probPalPaths++;
             }else {
                 System.out.println();
             }
@@ -73,19 +74,13 @@ public class PrintAllPathsFromRootAndPalindromPaths {
     }
     public static void main(String[] args) {
         PrintAllPathsFromRootAndPalindromPaths tree = new PrintAllPathsFromRootAndPalindromPaths();
-        /**
-         *              26
-         *         6       3
-         *     4      6         26
-         *       30
-         */
-        tree.root = new Node(26);
-        tree.root.right = new Node(3);
-        tree.root.right.right = new Node(26);
-        tree.root.left = new Node(6);
-        tree.root.left.left = new Node(4);
-        tree.root.left.left.right = new Node(30);
-        tree.root.left.right = new Node(6);
+        tree.root = new Node(2);
+        tree.root.right = new Node(1);
+        tree.root.left = new Node(1);
+        tree.root.left.left = new Node(1);
+        tree.root.left.right = new Node(3);
+        tree.root.left.right.right = new Node(1);
         printAllPaths();
+        System.out.println("Probable palindrom paths: " + probPalPaths);
     }
 }
