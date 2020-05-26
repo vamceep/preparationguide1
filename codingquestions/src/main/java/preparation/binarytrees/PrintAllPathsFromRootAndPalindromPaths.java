@@ -73,6 +73,29 @@ public class PrintAllPathsFromRootAndPalindromPaths {
 
     }
     public static void main(String[] args) {
+        System.out.println("test case1");
+        test1();
+        System.out.println("test case2");
+        test2();
+    }
+    public static void test2() {
+        PrintAllPathsFromRootAndPalindromPaths tree = new PrintAllPathsFromRootAndPalindromPaths();
+        root = new Node(2);
+        root.left = new Node(6);
+        root.right = new Node(8);
+
+        root.right.left = new Node(8);
+        root.right.right = new Node(5);
+
+        root.right.left.left = new Node(1);
+        root.right.left.right = new Node(2);
+        root.right.right.left = new Node(3);
+        root.right.right.right = new Node(8);
+        root.right.right.right.left = new Node(2);
+        printAllPaths();
+        System.out.println("Probable palindrom paths: " + probPalPaths);
+    }
+    public static void test1() {
         PrintAllPathsFromRootAndPalindromPaths tree = new PrintAllPathsFromRootAndPalindromPaths();
         tree.root = new Node(2);
         tree.root.right = new Node(1);
