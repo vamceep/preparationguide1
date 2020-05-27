@@ -57,7 +57,8 @@ Linux Boot process( fedora):
     
 Notes:
 ** PID of scheduler is 0
-00 PID of init is 0
+
+** PID of init is 1
 
 Useful images:
 
