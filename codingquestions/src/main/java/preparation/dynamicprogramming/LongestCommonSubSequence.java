@@ -37,19 +37,53 @@ public class LongestCommonSubSequence {
             return dp[m-1][n-1];
         }
     }
+
+    public static int lognestCSSL(String x, String y, int m, int n) {
+        int[][]dp = new int[m][n];
+
+        for(int i=0;i<m;i++) {
+            for(int j=0;j<n;j++) {
+                if(i==0 ) {
+                    dp[0][j] = 0;
+                }else if(j == 0) {
+                    dp[i][0] = 0;
+                }else if(x.charAt(i) == y.charAt(j)) {
+                    dp[i][j] = dp[i-1][j-1] +1;
+                }else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+        printMatrix(dp);
+        return dp[m-1][n-1];
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for(int i=0;i<matrix.length;i++) {
+            for(int j=0;j<matrix[0].length;j++) {
+                System.out.print(" " + matrix[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         int max = 10000;
-//        String x = "AGGTAB";
-//        String y = "GXTXAYB";
-        String x = "abbcb";
-        String y = "acdebbec";
+        String x = "AGGTAB";
+        String y = "GXTXAYB";
+//        String x = "abbcb";
+//        String y = "acdebbec";
+//        String x = "ABCDEF";
+//        String y = "FBDAMN";
         int m = x.length();
         int n = y.length();
-        int[][] dp = new int[m][max];
+        int[][] dp = new int[m][n];
         // assign -1 to all positions
         for (int[] row : dp) {
             Arrays.fill(row, -1);
         }
         System.out.println("lcss length: " + longestCommonSubSequenceLength(x, y, m,n,dp));
+        printMatrix(dp);
+        System.out.println("lcss length: " + lognestCSSL(x, y, m,n));
     }
 }
