@@ -58,15 +58,4 @@ public class App
         simpleBinarySearch();
     }
 
-    public static void heapSortProblems() {
-        HeapSort heapSort = new HeapSort();
-        int[] a= {1,2,12,15};
-        int[] b = {2,4,9,13,14};
-        int[] result = heapSort.merge(a,b);
-        int i = 0;
-        while(i < result.length) {
-            System.out.println(result[i]);
-            i++;
-        }
-    }
 }
