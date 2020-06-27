@@ -116,6 +116,16 @@ public class CorrectBSTIfTwoNodesSwapped {
         correctBST(root);
         System.out.println("\nAfter correction");
         printInorder(root);
+        System.out.println("\nprinting reverse in order");
+        printReverseInorder(root);
     }
 
+    public static void printReverseInorder(Node node)
+    {
+        if (node == null)
+            return;
+        printReverseInorder(node.right);
+        System.out.print(" " + node.val);
+        printReverseInorder(node.left);
+    }
 }
