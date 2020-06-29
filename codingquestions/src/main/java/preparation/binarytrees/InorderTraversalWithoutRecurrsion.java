@@ -39,11 +39,11 @@ public class InorderTraversalWithoutRecurrsion {
     public static void main(String[] args) {
         InorderTraversalWithoutRecurrsion tree = new InorderTraversalWithoutRecurrsion();
 
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(4);
-        tree.root.left.right = new Node(5);
+        root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
         tree.inorder();
     }
 }
