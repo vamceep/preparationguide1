@@ -18,6 +18,9 @@ public class DeleteKthNodeFromLast {
     public static Node deleteKthNodeFromLast(Node root, int k) {
        Node first = root;
        Node second = root;
+       if(root == null) {
+           return root;
+       }
        for(int i=0;i<k;i++) {
 
            // if k is count of nodes
