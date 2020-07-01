@@ -1,6 +1,11 @@
 package preparation.linkedlists;
 
 public class SwapKthNodeFromFirstandLastInLinkedList {
+    /**
+     * Swap Kth node from beginning with Kth node from end in a Linked List
+     *
+     * https://www.geeksforgeeks.org/swap-kth-node-from-beginning-with-kth-node-from-end-in-a-linked-list/?ref=rp
+     */
 
     static class Node {
         int val;
