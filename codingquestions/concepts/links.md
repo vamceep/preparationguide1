@@ -1,4 +1,8 @@
-https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-1%3A-Mutex-Locks
+System programming (locks, mutex , semaphoes etc..)
+
+https://github.com/angrave/SystemProgramming/wiki
+
+System design:
 
 https://www.hiredintech.com/classrooms/system-design/lesson/52
 
