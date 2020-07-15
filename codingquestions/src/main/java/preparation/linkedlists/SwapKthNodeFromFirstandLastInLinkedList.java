@@ -71,6 +71,18 @@ public class SwapKthNodeFromFirstandLastInLinkedList {
         }
         System.out.println();
     }
+
+    private static void printRec(Node root) {
+        if(root == null) {
+            return;
+        }
+        printRec(root.next);
+        System.out.print(root.val + " ");
+    }
+    public static void printRecTail() {
+        printRec(root);
+        System.out.println();
+    }
     public static void main(String[] args) {
         root = new Node(10);
         root.next = new Node(20);
@@ -81,5 +93,6 @@ public class SwapKthNodeFromFirstandLastInLinkedList {
         printList();
         swapNodes(5,3);
         printList();
+        printRecTail();
     }
 }
