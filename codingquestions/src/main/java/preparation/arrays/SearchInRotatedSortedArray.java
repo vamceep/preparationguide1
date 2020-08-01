@@ -1,6 +1,12 @@
 package preparation.arrays;
 
 public class SearchInRotatedSortedArray {
+    /**
+     * search an element in rotated sorted array
+     * https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
+     *
+     *
+     */
 
     public static int binarySearch(int[] arr, int low, int high, int key) {
         if(low > high) {
@@ -66,14 +72,21 @@ public class SearchInRotatedSortedArray {
         }
         /* if arr[low ... mid] sorted */
         if(arr[low] <= arr[mid]) {
+            /* As this subarray is sorted, we can quickly check if key lies in half or other half */
             if (val >= arr[low] && val <= arr[mid]) {
                 return search(arr, low, mid-1, val);
             }
+            /*If key not lies in first half subarray,
+           Divide other half  into two subarrays,
+           such that we can quickly check if key lies
+           in other half */
             return search(arr, mid+1, high, val);
         }
+        /* If arr[l..mid] first subarray is not sorted, then arr[mid... h] must be sorted subarry*/
         if(val >= arr[mid] && val <= arr[high]) {
             return search(arr, mid+1, high, val);
         }
+        /* search remaining half */
         return search(arr, low, mid-1, val );
     }
     public static int searchRotatedSortedArrayImproved(int[] arr, int val) {
