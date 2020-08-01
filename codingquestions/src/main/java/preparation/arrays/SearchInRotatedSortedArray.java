@@ -1,6 +1,6 @@
 package preparation.arrays;
 
-public class ArrayProblems {
+public class SearchInRotatedSortedArray {
 
     public static int binarySearch(int[] arr, int low, int high, int key) {
         if(low > high) {
