@@ -1,3 +1,12 @@
+JAVA SYNCHRONIZATION:
+
+http://tutorials.jenkov.com/java-concurrency/index.html
+
+
+
+GARBAGE COLLECTION:
+
+
 source: https://javapapers.com/java/types-of-java-garbage-collectors/
 
 better understanding of java gc:
