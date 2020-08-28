@@ -1,3 +1,14 @@
+JAVA SYNCHRONIZATION and THREADS:
+
+http://tutorials.jenkov.com/java-concurrency/index.html
+
+
+https://www.codejava.net/java-core/concurrency/how-to-use-threads-in-java-create-start-pause-interrupt-and-join
+
+
+GARBAGE COLLECTION:
+
+
 source: https://javapapers.com/java/types-of-java-garbage-collectors/
 
 better understanding of java gc:
