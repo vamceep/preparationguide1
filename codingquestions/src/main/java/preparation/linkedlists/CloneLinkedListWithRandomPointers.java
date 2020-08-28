@@ -58,6 +58,55 @@ public class CloneLinkedListWithRandomPointers {
         }
         return new CloneLinkedListWithRandomPointers(map.get(head));
     }
+
+    public static Node CloneMethod2(Node root) {
+        if(root == null) {
+            return null;
+        }
+
+        Node temp = root;
+        Node temp2;
+        Node clonedNode = null;
+        while(temp != null) {
+            Node newNode = new  Node(temp.val);
+            temp2 = temp.next;
+            temp.next = newNode;
+            newNode.next = temp2;
+            temp = temp.next.next;
+        }
+
+        temp = root;
+        while(temp != null && temp.next != null) {
+            if(temp.random != null) {
+                temp.next.random = temp.random.next;
+            }
+            temp = temp.next.next;
+
+        }
+
+        temp = root;
+        clonedNode = temp.next;
+        while(temp != null) {
+            temp2 = temp.next;
+            if(temp.next != null) {
+                temp.next = temp.next.next;
+            }
+            if(temp2.next != null) {
+                temp2.next = temp2.next.next;
+            }
+            temp = temp.next;
+        }
+        return clonedNode;
+    }
+
+    public static  void printNode(Node root) {
+        Node temp = root;
+        while(temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         CloneLinkedListWithRandomPointers list = new CloneLinkedListWithRandomPointers(new Node(5));
         list.add(4);
@@ -79,10 +128,16 @@ public class CloneLinkedListWithRandomPointers {
         // Making a clone of the original linked list. 
         CloneLinkedListWithRandomPointers clone = list.clone();
 
-        // Print the original and cloned linked list. 
+        // Print the original and cloned linked list.
         System.out.println("Original linked list");
         list.print();
         System.out.println("\nCloned linked list");
         clone.print();
+
+        System.out.println("Original linked list");
+        list.print();
+        Node cloned = CloneMethod2(head);
+        System.out.println("\nCloned linked list");
+        printNode(cloned);
     }
 }
