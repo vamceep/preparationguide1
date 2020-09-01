@@ -90,7 +90,7 @@ public class SearchInRotatedSortedArray {
         return search(arr, low, mid-1, val );
     }
     public static int searchRotatedSortedArrayImproved(int[] arr, int val) {
-        return search(arr, 0, arr.length, val);
+        return search(arr, 0, arr.length-1, val);
     }
     public static void main(String[] args) {
         int[] arr= {4,5,6,7,1,2,3};
