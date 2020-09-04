@@ -29,6 +29,7 @@ public class MaxAreaOfIceLand {
     public static int r = 0;
     public static int c = 0;
     public static int count = 0;
+    public static int numIceLands = 0;
 
     public static boolean isSafe(int[][] M, int row, int col, boolean[][] visite) {
         return ((row >= 0) && (row < r) && (col >= 0) && (col < c) && (M[row][col] == 1 && !visite[row][col]));
@@ -65,11 +66,14 @@ public class MaxAreaOfIceLand {
             for(int j=0;j<c;j++) {
                 if(M[i][j] == 1 && !visited[i][j]) {
                     count = 1;
-                    dfsAllDirections(M,i,j,visited);
+                    dfs(M,i,j,visited);
+                    numIceLands++;
                 }
                 result = Math.max(result, count);
+
             }
         }
+        System.out.println("Num icelands: " + numIceLands);
         return result;
     }
 
@@ -90,7 +94,24 @@ public class MaxAreaOfIceLand {
 //                { 0, 1, 0, 0, 0 },
 //                { 0, 0, 0, 0, 1 } };
 
-        int[][] M = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
+//        int[][] M = {
+//                {1,1,0,0,0},
+//                {1,1,0,0,0},
+//                {0,0,0,1,1},
+//                {0,0,0,1,1}};
+
+//        int[][] M = {
+//                    {1,1,1,1,0},
+//                    {1,1,0,1,0},
+//                    {1,1,0,0,0},
+//                    {0,0,0,0,0}};
+
+        int[][] M = {
+                      {1,1,0,0,0},
+                      {1,1,0,0,0},
+                      {0,0,1,0,0},
+                      {0,0,0,1,1}
+                    };
         r = M.length;
         c= M[0].length;
         System.out.println(findMaxAreaOfIceLand(M));
