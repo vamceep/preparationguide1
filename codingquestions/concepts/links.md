@@ -18,3 +18,8 @@ https://opensource.com/article/19/4/interprocess-communication-linux-storage
 Programming questions and solutions (DP etc..)
 
 https://github.com/mission-peace/interview
+
+
+Dynamic Programming questions:
+
+https://blog.usejournal.com/top-50-dynamic-programming-practice-problems-4208fed71aa3
